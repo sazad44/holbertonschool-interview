@@ -4,15 +4,11 @@
 
 def canUnlockAll(boxes):
     """determines if list of given boxes can all be unlocked"""
-    boxNum = 0
     keyRing = []
-    for box in boxes:
-        if boxNum in keyRing or boxNum == 0:
-            boxNum += 1
-            keyRing += box
-            continue
-        else:
-            print(box)
-            print(boxNum)
-            return False
-    return True
+    for boxNum in range(len(boxes)):
+        if boxNum == 0 or boxNum in keyRing:
+            keyRing += boxes[boxNum]
+    if len(set(keyRing)) == len(boxes) - 1:
+        return True
+    else:
+        return False
