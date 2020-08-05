@@ -12,9 +12,6 @@ int main(void)
 	heap_t *root;
 	heap_t *node;
 
-	node = heap_insert(NULL, 101);
-	printf("Inserted: %d\n", node->n);
-	binary_tree_print(node);
 	root = NULL;
 	node = heap_insert(&root, 98);
 	printf("Inserted: %d\n", node->n);
