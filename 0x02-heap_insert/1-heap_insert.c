@@ -16,8 +16,6 @@ heap_t *heap_insert(heap_t **root, int value)
 	heap_t *destNode;
 	heap_t *currNode;
 
-	if (root == NULL)
-		return (NULL);
 	newNode = malloc(sizeof(heap_t));
 	if (newNode == NULL)
 		return (NULL);
@@ -25,7 +23,7 @@ heap_t *heap_insert(heap_t **root, int value)
 	newNode->parent = NULL;
 	newNode->left = NULL;
 	newNode->right = NULL;
-	if (*root == NULL)
+	if (root == NULL || *root == NULL)
 	{
 		*root = newNode;
 		return (newNode);
