@@ -4,7 +4,7 @@
 
 def minOperations(n):
     """determines min operations to generate n copied output"""
-    if notisinstance(n, int) or n <= 0:
+    if not isinstance(n, int) or n <= 0:
         return 0
     elif n == 1:
         return 1
