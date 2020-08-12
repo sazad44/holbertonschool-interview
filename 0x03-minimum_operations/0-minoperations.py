@@ -4,10 +4,8 @@
 
 def minOperations(n):
     """determines min operations to generate n copied output"""
-    if not isinstance(n, int) or n <= 0:
+    if not isinstance(n, int) or n <= 1:
         return 0
-    elif n == 1:
-        return 1
     opCount = 2
     textLen = len("HH")
     clipB = len("H")
