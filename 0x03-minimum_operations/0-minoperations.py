@@ -12,17 +12,11 @@ def minOperations(n):
     start = "HH"
     clipB = "H"
     while len(start) < n:
-        if n >= len(start) * 2:
+        if n >= len(start) * 2 and n % 2 == 0:
+            start *= 2
+            opCount += 2
             clipB = start
-            opCount += 1
-            start += clipB
-            opCount += 1
-        elif len(start) + len(clipB) == n:
-            start += "H"
-            opCount += 1
         else:
             start += clipB
             opCount += 1
-    if len(start) > n:
-        return opCount - 1
     return opCount
